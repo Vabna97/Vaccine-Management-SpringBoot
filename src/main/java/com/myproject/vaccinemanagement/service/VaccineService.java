@@ -27,15 +27,7 @@ public class VaccineService implements IVaccineService{
         return (List<Vaccine>)repo.findAll();
     }
 
-    @Override
-    public List<Vaccine> searchByVaccineNameContaining(String containing) {
-        return repo.findByVaccineNameContaining(containing);
-    }
 
-    @Override
-    public List<Vaccine> searchBySupplierContaining(String containing) {
-        return repo.findBySupplierContaining(containing);
-    }
 
     @Override
     public void deleteVaccineRecord(Integer id) {
@@ -47,10 +39,5 @@ public class VaccineService implements IVaccineService{
         
     	Optional<Vaccine> optional = repo.findById(id); 
     	return optional.get();
-    }
-
-    @Override
-    public List<Vaccine> searchByManufacturingCompanyContaining(String containing) {
-        return repo.findByManufacturingCompanyContaining(containing);
     }
 }
